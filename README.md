@@ -78,7 +78,7 @@ Output:
     Main products are APIM, IAM and EI
 ```
 
-## Example 2
+## Example 2: Json response
 
 ```ballerina
     import ballerina/http;
@@ -90,7 +90,7 @@ Output:
             clientConfig:{
                 auth:{
                     scheme: http:OAUTH2,
-                    accessToken: "6f2514f88ae84325acadd3a228027059"
+                    accessToken: config:getAsString("ACCESS_TOKEN")
                 }
 
             }
