@@ -43,34 +43,35 @@ module_dialogflow: Client dialogflowClient = new(dialogflowConfig);
 ## Example 1
 
 ```ballerina
-    import ballerina/http;
-    import ballerina/io;
-    import module_dialogflow;
+import ballerina/http;
+import ballerina/io;
+import ballerina/config;
+import ramesha/module_dialogflow;
 
-    public function main(){
-        module_dialogflow: DialogflowConfig dialogflowConfig = {
-            clientConfig:{
-                auth:{
-                    scheme: http:OAUTH2,
-                    accessToken: config:getAsString("ACCESS_TOKEN")
-                }
-
+public function main(){
+    module_dialogflow: DialogflowConfig dialogflowConfig = {
+        clientConfig:{
+            auth:{
+                scheme: http:OAUTH2,
+                accessToken: config:getAsString("ACCESS_TOKEN")
             }
-        };
 
-        callb(dialogflowConfig);
+        }
+    };
 
-    }
+    callb(dialogflowConfig);
 
-    function callb(module_dialogflow: DialogflowConfig dialogflowConfig){
-        module_dialogflow: Client dialogflowClient = new(dialogflowConfig);
+}
 
-        string query11= "What are the main products of WSO2";
+function callb(module_dialogflow: DialogflowConfig dialogflowConfig){
+    module_dialogflow: Client dialogflowClient = new(dialogflowConfig);
 
-        var res= dialogflowClient->getResponse(query11);
-        io:println(res);
+    string query11= "What are the main products of WSO2";
 
-    }
+    var res= dialogflowClient->getResponse(query11);
+    io:println(res);
+
+}
 ```
 
 Output:
@@ -81,34 +82,35 @@ Output:
 ## Example 2: Json response
 
 ```ballerina
-    import ballerina/http;
-    import ballerina/io;
-    import module_dialogflow;
+import ballerina/http;
+import ballerina/io;
+import ballerina/config;
+import ramesha/module_dialogflow;
 
-    public function main(){
-        module_dialogflow: DialogflowConfig dialogflowConfig = {
-            clientConfig:{
-                auth:{
-                    scheme: http:OAUTH2,
-                    accessToken: config:getAsString("ACCESS_TOKEN")
-                }
-
+public function main(){
+    module_dialogflow: DialogflowConfig dialogflowConfig = {
+        clientConfig:{
+            auth:{
+                scheme: http:OAUTH2,
+                accessToken: config:getAsString("ACCESS_TOKEN")
             }
-        };
 
-        callb(dialogflowConfig);
+        }
+    };
 
-    }
+    callb(dialogflowConfig);
 
-    function callb(module_dialogflow: DialogflowConfig dialogflowConfig){
-        module_dialogflow: Client dialogflowClient = new(dialogflowConfig);
+}
 
-        string query11= "What are the main products of WSO2";
+function callb(module_dialogflow: DialogflowConfig dialogflowConfig){
+    module_dialogflow: Client dialogflowClient = new(dialogflowConfig);
 
-        var res= dialogflowClient->getJsonResponse(query11);
-        io:println(res);
+    string query11= "What are the main products of WSO2";
 
-    }
+    var res= dialogflowClient->getJsonResponse(query11);
+    io:println(res);
+
+}
 ```
 
 Output:

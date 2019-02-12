@@ -45,6 +45,7 @@ module_dialogflow: Client dialogflowClient = new(dialogflowConfig);
 ```ballerina
 import ballerina/http;
 import ballerina/io;
+import ballerina/config;
 import ramesha/module_dialogflow;
 
 public function main(){
@@ -83,6 +84,7 @@ Output:
 ```ballerina
 import ballerina/http;
 import ballerina/io;
+import ballerina/config;
 import ramesha/module_dialogflow;
 
 public function main(){
