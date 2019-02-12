@@ -31,7 +31,7 @@ module_dialogflow: DialogflowConfig dialogflowConfig = {
     clientConfig:{
         auth:{
             scheme: http:OAUTH2,
-            accessToken: "6f2514f88ae84325acadd3a228027059"
+            accessToken: config:getAsString("ACCESS_TOKEN")
         }
 
     }
@@ -52,7 +52,7 @@ module_dialogflow: Client dialogflowClient = new(dialogflowConfig);
             clientConfig:{
                 auth:{
                     scheme: http:OAUTH2,
-                    accessToken: "6f2514f88ae84325acadd3a228027059"
+                    accessToken: config:getAsString("ACCESS_TOKEN")
                 }
 
             }
@@ -78,7 +78,7 @@ Output:
     Main products are APIM, IAM and EI
 ```
 
-## Sentiment Analysis - Example 2
+## Example 2
 
 ```ballerina
     import ballerina/http;
@@ -114,7 +114,36 @@ Output:
 Output:
 
 ```json
-{"id":"4a788f57-7e48-4ad3-acf3-21e27a054044", "timestamp":"2019-02-12T10:07:19.217Z", "lang":"en", "result":{"source":"agent", "resolvedQuery":"What are the main products of WSO2", "action":"", "actionIncomplete":false, "parameters":{}, "contexts":[], "metadata":{"intentId":"3931b5b1-941d-403f-a4ec-ee814e1914e9", "webhookUsed":"false", "webhookForSlotFillingUsed":"false", "isFallbackIntent":"false", "intentName":"products"}, "fulfillment":{"speech":"Main products are APIM, IAM and EI", "messages":[{"type":0, "speech":"Main products are APIM, IAM and EI"}]}, "score":1.0}, "status":{"code":200, "errorType":"success"}, "sessionId":"12345"}
+{
+    "id":"4a788f57-7e48-4ad3-acf3-21e27a054044",
+    "timestamp":"2019-02-12T10:07:19.217Z",
+    "lang":"en",
+    "result":{
+        "source":"agent",
+        "resolvedQuery":"What are the main products of WSO2",
+        "action":"",
+        "actionIncomplete":false,
+        "parameters":{},
+        "contexts":[],
+        "metadata":{
+            "intentId":"3931b5b1-941d-403f-a4ec-ee814e1914e9",
+            "webhookUsed":"false",
+            "webhookForSlotFillingUsed":"false",
+            "isFallbackIntent":"false",
+            "intentName":"products"
+         },
+        "fulfillment":{
+            "speech":"Main products are APIM, IAM and EI",
+            "messages":[{"type":0, "speech":"Main products are APIM, IAM and EI"}]
+        },
+        "score":1.0
+    },
+    "status":{
+        "code":200,
+        "errorType":"success"
+    },
+    "sessionId":"12345"
+}
 ```
 
 
