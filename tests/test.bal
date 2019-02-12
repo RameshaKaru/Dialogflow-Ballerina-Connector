@@ -20,6 +20,7 @@ Client dialogflowClient = new(dialogflowConfig);
 @test:Config
 function testgetJsonResponse(){
 
+    //mock query
     string query11= "what are the main products of WSO2";
 
     var res= dialogflowClient->getJsonResponse(query11);
@@ -37,6 +38,7 @@ function testgetJsonResponse(){
 }
 function testGetResponse(){
 
+    //mock query
     string query11= "what are the main products of WSO2";
 
     var res= dialogflowClient->getResponse(query11);
